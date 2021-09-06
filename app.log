@@ -1,0 +1,26 @@
+2021-09-06 16:36:57.684  INFO 7276 --- [main] com.cg.spring.boot.demo.App              : Starting App using Java 11.0.2 on DESKTOP-KFP7J4E with PID 7276 (C:\VamanCode\STS_WS\com-cg-spring-boot-demo-aug3\target\classes started by Vaman in C:\VamanCode\STS_WS\com-cg-spring-boot-demo-aug3)
+2021-09-06 16:36:57.715  INFO 7276 --- [main] com.cg.spring.boot.demo.App              : No active profile set, falling back to default profiles: default
+2021-09-06 16:37:00.594  INFO 7276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-09-06 16:37:00.620  INFO 7276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-06 16:37:00.622  INFO 7276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-06 16:37:00.628  INFO 7276 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.24] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2021-09-06 16:37:00.630  INFO 7276 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+2021-09-06 16:37:00.631  INFO 7276 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2021-09-06 16:37:00.632  INFO 7276 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-09-06 16:37:00.653  INFO 7276 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2021-09-06 16:37:01.056  INFO 7276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-06 16:37:01.057  INFO 7276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3100 ms
+2021-09-06 16:37:02.674  INFO 7276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2021-09-06 16:37:02.702  INFO 7276 --- [main] com.cg.spring.boot.demo.App              : Started App in 6.233 seconds (JVM running for 9.796)
+2021-09-06 16:37:02.724  WARN 7276 --- [main] com.cg.spring.boot.demo.App              : This is a warning.
+2021-09-06 16:37:02.725 ERROR 7276 --- [main] com.cg.spring.boot.demo.App              : This is an error.
+2021-09-06 16:37:02.731  INFO 7276 --- [main] com.cg.spring.boot.demo.App              : End
+2021-09-06 16:37:12.693  INFO 7276 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-06 16:37:12.695  INFO 7276 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-09-06 16:37:12.697  INFO 7276 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-09-06 16:37:12.770  INFO 7276 --- [http-nio-8082-exec-1] com.cg.spring.boot.demo.Hello            : hello
+2021-09-06 16:37:16.428  INFO 7276 --- [http-nio-8082-exec-2] com.cg.spring.boot.demo.Hello            : emp
+2021-09-06 16:37:19.122  INFO 7276 --- [http-nio-8082-exec-5] com.cg.spring.boot.demo.Hello            : hello
+2021-09-06 16:40:04.357  INFO 7276 --- [http-nio-8082-exec-8] com.cg.spring.boot.demo.Hello            : hello
+2021-09-06 16:42:32.761  INFO 7276 --- [http-nio-8082-exec-1] com.cg.spring.boot.demo.Hello            : hello
+2021-09-06 16:44:55.951  INFO 7276 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
