@@ -1,0 +1,13 @@
+package com.cg.spring.boot.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ComCgSpringBootDemoAug3ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
