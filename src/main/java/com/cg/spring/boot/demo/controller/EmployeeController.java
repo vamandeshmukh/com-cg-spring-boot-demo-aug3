@@ -24,16 +24,14 @@ public class EmployeeController {
 		return employeeService.getEmployee();
 	}
 
-
-	
-	@GetMapping("/empList")
-	public List<Employee> empList() {
-		List<Employee> empList = new ArrayList<>();
-		empList.add(new Employee(101, "Sonu", 10.50));
-		empList.add(new Employee(102, "Monu", 20.25));
-		empList.add(new Employee(103, "Tonu", 15.75));
-		LOG.info("empList");
-		return empList;
-	}
+//	@GetMapping("/empList")
+//	public List<Employee> empList() {
+//		List<Employee> empList = new ArrayList<>();
+//		empList.add(new Employee(101, "Sonu", 10.50));
+//		empList.add(new Employee(102, "Monu", 20.25));
+//		empList.add(new Employee(103, "Tonu", 15.75));
+//		LOG.info("empList");
+//		return empList;
+//	}
 
 }
