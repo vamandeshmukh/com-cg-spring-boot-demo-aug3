@@ -1,11 +1,11 @@
 package com.cg.spring.boot.demo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,11 +25,10 @@ public class EmployeeController {
 	private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
 
 	// http://localhost:8082/getEmp/101
-	// http://localhost:8082/getEmp/102
-	@GetMapping("/getEmp{eid}")
+	@GetMapping("/getEmp/{eid}")
 	public Employee getEmpById(@PathVariable int eid) {
 		LOG.info("getEmp");
-		return employeeService.getEmployee(eid);
+		return employeeService.getEmployeeById(eid);
 	}
 
 	// http://localhost:8082/getAllEmp
@@ -54,8 +53,8 @@ public class EmployeeController {
 	}
 
 	// http://localhost:8082/deleteEmp/{eid}
-	@PutMapping("/deleteEmp")
-	public Employee deleteEmp(@PathVariable int eid) {
+	@DeleteMapping("/deleteEmp/{eid}")
+	public int deleteEmp(@PathVariable int eid) {
 		LOG.info("deleteEmp");
 		return employeeService.deleteEmployee(eid);
 	}
