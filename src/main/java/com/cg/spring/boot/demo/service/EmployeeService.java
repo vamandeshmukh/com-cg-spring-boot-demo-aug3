@@ -19,6 +19,7 @@ public class EmployeeService {
 	public Employee getEmployee() {
 		LOG.info("getEmployee");
 //		return new Employee(101, "Sonu", 10.5);
+//		employeeRepository.findAll();
 		return employeeRepository.findById(101).get();
 
 	}
