@@ -49,7 +49,6 @@
 
 	</dependencies>
 
-
 	<build>
 		<plugins>
 			<plugin>
