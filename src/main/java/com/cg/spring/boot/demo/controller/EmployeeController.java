@@ -9,19 +9,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.spring.boot.demo.model.Employee;
+import com.cg.spring.boot.demo.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
 
-	private static final Logger LOG = LoggerFactory.getLogger(Employee.class);
+	private EmployeeService employeeService;
+
+	private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
 
 	@GetMapping("/emp")
-	public Employee emp() {
-		Employee emp = new Employee(101, "Sonu", 10.5);
-		LOG.info(emp.toString());
-		return emp;
+	public Employee getEmp() {
+		LOG.info("getEmp");
+		return employeeService.getEmployee();
 	}
 
+
+	
 	@GetMapping("/empList")
 	public List<Employee> empList() {
 		List<Employee> empList = new ArrayList<>();
