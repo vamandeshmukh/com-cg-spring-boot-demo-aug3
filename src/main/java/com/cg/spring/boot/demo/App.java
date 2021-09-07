@@ -16,8 +16,6 @@ public class App {
 
 		SpringApplication.run(App.class, args);
 
-		LOG.warn("This is a warning.");
-		LOG.error("This is an error.");
 		LOG.info("End");
 
 	}
