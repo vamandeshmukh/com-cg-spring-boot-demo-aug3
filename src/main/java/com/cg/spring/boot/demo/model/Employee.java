@@ -1,4 +1,4 @@
-package com.cg.spring.boot.demo;
+package com.cg.spring.boot.demo.model;
 
 public class Employee {
 
