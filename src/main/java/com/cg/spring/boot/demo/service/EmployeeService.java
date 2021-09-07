@@ -15,4 +15,11 @@ public class EmployeeService {
 		LOG.info("getEmployee");
 		return new Employee(101, "Sonu", 10.5);
 	}
+
+	public Employee addEmployee(Employee employee) {
+		Employee emp = employee;
+		LOG.info(emp.toString());
+		return emp;
+	}
+
 }

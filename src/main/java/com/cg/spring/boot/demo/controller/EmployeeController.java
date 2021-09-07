@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.spring.boot.demo.model.Employee;
@@ -24,6 +26,12 @@ public class EmployeeController {
 	public Employee getEmp() {
 		LOG.info("getEmp");
 		return employeeService.getEmployee();
+	}
+
+	@PostMapping("/addEmp")
+	public Employee addEmp(@RequestBody Employee employee) {
+		LOG.info("addEmp");
+		return employeeService.addEmployee(employee);
 	}
 
 //	@GetMapping("/empList")
