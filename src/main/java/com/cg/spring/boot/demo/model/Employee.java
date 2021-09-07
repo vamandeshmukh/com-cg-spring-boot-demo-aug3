@@ -1,7 +1,12 @@
 package com.cg.spring.boot.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Employee {
 
+	@Id
 	private int eid;
 	private String firstName;
 	private double salary;
