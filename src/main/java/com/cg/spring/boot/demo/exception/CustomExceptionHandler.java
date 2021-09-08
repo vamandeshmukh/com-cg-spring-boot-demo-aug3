@@ -16,9 +16,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(EmployeeNotFoundException.class)
 	public ResponseEntity<Object> handleEmployeeNotFoundException() {
 		LOG.error("handleEmployeeNotFoundException");
-
 		return new ResponseEntity<Object>(null, HttpStatus.NOT_FOUND);
-
 	}
 
 }

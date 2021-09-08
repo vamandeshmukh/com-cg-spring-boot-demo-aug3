@@ -33,34 +33,6 @@ public class EmployeeController {
 //		return employeeService.getEmployeeById(eid);
 //	}
 
-//	// http://localhost:8082/getEmp/101
-//	@GetMapping("/getEmp/{eid}")
-//	public ResponseEntity<Employee> getEmpById(@PathVariable int eid) {
-//		LOG.info("getEmp");
-//		Employee emp = employeeService.getEmployeeById(eid);
-//		if (null != emp) {
-//			LOG.info(emp.toString());
-//		return new ResponseEntity<Employee>(emp, HttpStatus.OK);
-//		} else {
-//			LOG.error("Employee with the id " + eid + " does not exist.");
-//			return new ResponseEntity<Employee>(emp, HttpStatus.NOT_FOUND);
-//		}
-//	}
-
-//	// http://localhost:8082/getEmp/101
-//	@GetMapping("/getEmp/{eid}")
-//	public ResponseEntity<Employee> getEmpById(@PathVariable int eid) {
-//		LOG.info("getEmp");
-//		Employee emp = employeeService.getEmployeeById(eid);
-//		if (null != emp) {
-//			LOG.info(emp.toString());
-//			return new ResponseEntity<Employee>(emp, HttpStatus.OK);
-//		} else {
-//			LOG.error("Employee with the id " + eid + " does not exist.");
-//			return new ResponseEntity<Employee>(emp, HttpStatus.NOT_FOUND);
-//		}
-//	}
-
 	// http://localhost:8082/getEmp/101
 	@GetMapping("/getEmp/{eid}")
 	public ResponseEntity<Employee> getEmpById(@PathVariable int eid) {
@@ -69,6 +41,13 @@ public class EmployeeController {
 		return new ResponseEntity<Employee>(emp, HttpStatus.OK);
 	}
 
+	// http://localhost:8082/getEmpWithSalaryGreaterThan/10.5
+	@GetMapping("/getEmpWithSalaryGreaterThan/{salary}")
+	public ResponseEntity<List<Employee>> getEmpWithSalaryGreaterThan(@PathVariable double salary) {
+		LOG.info("getEmpWithSalaryGreaterThan");
+		List<Employee> empList = employeeService.getEmployeeWithSalaryGreaterThan(salary);
+		return new ResponseEntity<>(empList, HttpStatus.OK);
+	}
 
 	// http://localhost:8082/getAllEmp
 	@GetMapping("/getAllEmp")

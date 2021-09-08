@@ -1,7 +1,6 @@
 package com.cg.spring.boot.demo.service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -23,21 +22,27 @@ public class EmployeeService {
 
 //	public Employee getEmployeeById(int eid) {
 //		LOG.info("getEmployeeById " + eid);
-//		try {
-//			return employeeRepository.findById(eid).get();
-//		} catch (NoSuchElementException e) {
-//			LOG.error(e.getMessage());
-//			return null;
-//		}
+//		return employeeRepository.findById(eid).get();
 //	}
 
 	public Employee getEmployeeById(int eid) {
 		LOG.info("getEmployeeById " + eid);
 		Optional<Employee> optEmp = employeeRepository.findById(eid);
-		if (optEmp.isEmpty())
+		if (optEmp.isEmpty()) {
+			LOG.error("Employee not found.");
 			throw new EmployeeNotFoundException();
-		else
+		} else
 			return optEmp.get();
+	}
+
+	public List<Employee> getEmployeeWithSalaryGreaterThan(double salary) {
+		LOG.info("getEmployeeWithSalaryGreaterThan " + salary);
+		List<Employee> empList = employeeRepository.findBySalaryGreaterThan(salary);
+		if (empList.size() == 0) {
+			LOG.error("Employee not found.");
+			throw new EmployeeNotFoundException();
+		} else
+			return empList;
 	}
 
 	public List<Employee> getAllEmployees() {
