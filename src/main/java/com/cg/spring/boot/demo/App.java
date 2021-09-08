@@ -12,7 +12,7 @@ public class App {
 
 	public static void main(String[] args) {
 
-		LOG.info("Start...");
+		LOG.info("Start");
 
 		SpringApplication.run(App.class, args);
 
