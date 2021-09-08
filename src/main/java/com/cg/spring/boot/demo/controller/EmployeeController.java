@@ -69,6 +69,7 @@ public class EmployeeController {
 		return new ResponseEntity<Employee>(emp, HttpStatus.OK);
 	}
 
+
 	// http://localhost:8082/getAllEmp
 	@GetMapping("/getAllEmp")
 	public List<Employee> getAllEmp() {
