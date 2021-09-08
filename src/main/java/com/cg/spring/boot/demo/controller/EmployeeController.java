@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,11 +26,25 @@ public class EmployeeController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
 
+//	// http://localhost:8082/getEmp/101
+//	@GetMapping("/getEmp/{eid}")
+//	public Employee getEmpById(@PathVariable int eid) {
+//		LOG.info("getEmp");
+//		return employeeService.getEmployeeById(eid);
+//	}
+
 	// http://localhost:8082/getEmp/101
 	@GetMapping("/getEmp/{eid}")
-	public Employee getEmpById(@PathVariable int eid) {
+	public ResponseEntity<Employee> getEmpById(@PathVariable int eid) {
 		LOG.info("getEmp");
-		return employeeService.getEmployeeById(eid);
+		Employee emp = employeeService.getEmployeeById(eid);
+		if (null != emp) {
+			LOG.info(emp.toString());
+			return new ResponseEntity<Employee>(emp, HttpStatus.OK);
+		} else {
+			LOG.error("Employee with the id " + eid + " does not exist.");
+			return new ResponseEntity<Employee>(emp, HttpStatus.NOT_FOUND);
+		}
 	}
 
 	// http://localhost:8082/getAllEmp

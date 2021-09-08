@@ -1,6 +1,7 @@
 package com.cg.spring.boot.demo.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +21,12 @@ public class EmployeeService {
 
 	public Employee getEmployeeById(int eid) {
 		LOG.info("getEmployeeById " + eid);
-		return employeeRepository.findById(eid).get();
+		try {
+			return employeeRepository.findById(eid).get();
+		} catch (NoSuchElementException e) {
+			LOG.error(e.getMessage());
+			return null;
+		}
 	}
 
 	public List<Employee> getAllEmployees() {
@@ -40,6 +46,7 @@ public class EmployeeService {
 	}
 
 	public int deleteEmployee(int eid) {
+		LOG.info("deleteEmployee");
 		employeeRepository.deleteById(eid);
 		return eid;
 	}
