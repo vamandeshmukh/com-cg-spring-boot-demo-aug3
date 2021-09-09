@@ -1,16 +1,22 @@
 package com.cg.spring.boot.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+//import org.hibernate.validator.Length;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "employees")
 public class Employee {
 
 	@Id
+	@Column(name = "employee_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int eid;
+
+	@Column(name = "first_name", length = 40, nullable = false)
+//	@Length(min = 3, max = 40)
 	private String firstName;
+
+	@Column(name = "salary")
 	private double salary;
 
 	public Employee() {

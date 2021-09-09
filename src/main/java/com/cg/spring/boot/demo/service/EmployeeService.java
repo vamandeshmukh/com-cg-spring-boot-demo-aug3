@@ -65,8 +65,11 @@ public class EmployeeService {
 		return employeeRepository.save(employee);
 	}
 
+	// handle this exception
+	// EmptyResultDataAccessException:
 	public int deleteEmployee(int eid) {
 		LOG.info("deleteEmployee");
+		// here 
 		employeeRepository.deleteById(eid);
 		return eid;
 	}
