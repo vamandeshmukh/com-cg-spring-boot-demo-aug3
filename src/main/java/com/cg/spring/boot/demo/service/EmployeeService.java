@@ -69,9 +69,13 @@ public class EmployeeService {
 	// EmptyResultDataAccessException:
 	public int deleteEmployee(int eid) {
 		LOG.info("deleteEmployee");
-		// here 
+		// here
 		employeeRepository.deleteById(eid);
 		return eid;
+	}
+
+	public List<Employee> getEmployeeByFirstName(String firstName) {
+		return employeeRepository.findByFirstName(firstName);
 	}
 
 }
