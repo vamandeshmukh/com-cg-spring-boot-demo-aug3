@@ -14,7 +14,7 @@ public class Employee {
 	private int eid;
 
 	@Column(name = "first_name", nullable = false)
-	@Length(min = 3, max = 40, message = "{validator.length}")
+	@Length(min = 3, max = 40, message = "{validator.length}") // not working
 	private String firstName;
 
 	@Column(name = "salary")
