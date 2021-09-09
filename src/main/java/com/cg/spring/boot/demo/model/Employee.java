@@ -1,8 +1,16 @@
 package com.cg.spring.boot.demo.model;
 
-import javax.persistence.*;
-
-import org.hibernate.validator.constraints.Length;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "employees")
@@ -14,13 +22,13 @@ public class Employee {
 	private int eid;
 
 	@Column(name = "first_name", nullable = false)
-	@Length(min = 3, max = 40, message = "{validator.length}") // not working
+	@Size(min = 1, max = 40, message = "Name must have between {min} and {max} characters.")
+	@NotNull(message = "A name is required for employee.")
 	private String firstName;
 
 	@Column(name = "salary")
+	@Min(message = "Salary cannot be negative", value = 1)
 	private double salary;
-
-//	@Column(name = "department")
 
 	@ManyToOne
 	@JoinColumn(name = "department_id")
