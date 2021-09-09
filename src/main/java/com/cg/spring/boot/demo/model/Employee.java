@@ -1,7 +1,8 @@
 package com.cg.spring.boot.demo.model;
 
-//import org.hibernate.validator.Length;
 import javax.persistence.*;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "employees")
@@ -12,8 +13,8 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int eid;
 
-	@Column(name = "first_name", length = 40, nullable = false)
-//	@Length(min = 3, max = 40)
+	@Column(name = "first_name", nullable = false)
+	@Length(min = 3, max = 40, message = "{validator.length}")
 	private String firstName;
 
 	@Column(name = "salary")
