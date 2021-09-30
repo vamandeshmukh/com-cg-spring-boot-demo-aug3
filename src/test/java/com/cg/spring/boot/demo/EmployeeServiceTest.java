@@ -24,9 +24,9 @@ public class EmployeeServiceTest {
 	public void testFindEmployeeById() throws Exception {
 		LOG.info("testFindEmployeeById");
 		Employee expected = new Employee(101, "Sonu", 31.00);
-		Employee actual = employeeService.findEmployeeById(101);
+		Employee actual = employeeService.getEmployeeById(101);
 		assertEquals(expected.getEid(), actual.getEid());
-		assertEquals(expected.getEname(), actual.getEname());
+		assertEquals(expected.getFirstName(), actual.getFirstName());
 		// other fields also
 	}
 
@@ -34,7 +34,7 @@ public class EmployeeServiceTest {
 	public void testFindEmployeeByIdNotFound() throws Exception {
 		LOG.info("testFindEmployeeById");
 		Employee unexpected = new Employee(102, "Monu", 25.0);
-		Employee actual = employeeService.findEmployeeById(101);
+		Employee actual = employeeService.getEmployeeById(101);
 		assertNotEquals(unexpected.getEid(), actual.getEid());
 	}
 

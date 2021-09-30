@@ -28,7 +28,7 @@ public class EmployeeControllerTest {
 
 		HttpStatus expected = HttpStatus.OK;
 
-		ResponseEntity<Employee> actual = employeeController.getEmployeeById(101);
+		ResponseEntity<Employee> actual = employeeController.getEmpById(101);
 
 		assertEquals(expected, actual.getStatusCode());
 	}
